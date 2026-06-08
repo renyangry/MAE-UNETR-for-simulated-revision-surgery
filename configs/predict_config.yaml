@@ -1,0 +1,24 @@
+# MAE-UNETR Inference Configuration
+# See mae_unetr/predict.py for usage.
+
+model:
+  img_size: [96, 96, 96]
+  patch_size: 16
+  in_channels: 1
+  num_classes: 2
+  embed_dim: 768
+  depth: 12
+  num_heads: 12
+  feature_size: 16
+
+inference:
+  sliding_window: true        # Use sliding-window inference for large volumes
+  roi_size: [96, 96, 96]
+  sw_batch_size: 4
+  overlap: 0.5                # Overlap fraction between windows
+  mode: gaussian              # Blending mode: gaussian | constant
+
+preprocessing:
+  target_spacing: 1.0         # mm — isotropic resampling before inference
+  clip_hu_min: -200           # HU lower clip for CT normalisation
+  clip_hu_max: 1500           # HU upper clip for CT normalisation

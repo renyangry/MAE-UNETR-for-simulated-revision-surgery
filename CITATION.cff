@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below once the paper is published."
+type: software
+title: "MAE-UNETR for Simulated Revision Surgery"
+abstract: >
+  An automatic deep learning pipeline for pre-operative femoral reconstruction
+  in revision total knee arthroplasty. The pipeline combines 3D CT segmentation
+  with a transformer-based reconstruction network to estimate full femoral
+  geometry under simulated implant-presence or distal-resection conditions.
+license: Apache-2.0
+repository-code: "https://github.com/renyangry/MAE-UNETR-for-simulated-revision-surgery"
+
+# Citation will be updated upon manuscript acceptance.
+# authors:
+#   - family-names: ""
+#     given-names: ""
+#     affiliation: ""
+# preferred-citation:
+#   type: article
+#   title: "An Automatic Pipeline for Revision Knee Arthroplasty Planning"
+#   journal: "Bone Joint Research"
+#   year: TBD
+#   doi: TBD

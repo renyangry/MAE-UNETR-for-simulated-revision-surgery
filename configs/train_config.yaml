@@ -1,0 +1,39 @@
+# MAE-UNETR Training Configuration
+# See mae_unetr/train.py for usage.
+
+model:
+  img_size: [96, 96, 96]     # Input patch size (D, H, W)
+  patch_size: 16              # ViT tokenisation patch size
+  in_channels: 1              # CT is single-channel
+  num_classes: 2              # Background + femur
+  embed_dim: 768
+  depth: 12
+  num_heads: 12
+  feature_size: 16
+
+training:
+  stage: finetune             # Options: pretrain | finetune
+  epochs: 200
+  batch_size: 2
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-5
+  lr_scheduler: cosine        # Options: cosine | step | plateau
+  warmup_epochs: 10
+  val_interval: 5             # Validate every N epochs
+  save_interval: 10           # Save checkpoint every N epochs
+
+augmentation:
+  rand_flip_prob: 0.5
+  rand_rotate90_prob: 0.5
+  rand_scale_intensity_prob: 0.3
+  rand_shift_intensity_prob: 0.3
+
+loss:
+  type: dice_ce               # Dice + Cross-Entropy composite loss
+  dice_weight: 0.5
+  ce_weight: 0.5
+
+pretrain:
+  mask_ratio: 0.75            # Fraction of patches masked during MAE pretraining
+  epochs: 400
+  learning_rate: 1.5e-4

@@ -1,0 +1,18 @@
+# nnUNet Segmentation Configuration
+# See segmentation/train.py and segmentation/predict.py for usage.
+# Full nnUNet hyperparameters are managed automatically by nnUNet v2;
+# the settings below are passed as CLI arguments.
+
+nnunet:
+  dataset_id: 1               # Replace with your dataset ID
+  configuration: 3d_fullres   # Options: 3d_fullres | 3d_lowres | 2d
+  trainer: nnUNetTrainer
+  folds: [0, 1, 2, 3, 4]     # Folds to train/predict
+
+labels:
+  0: background
+  1: femur
+
+preprocessing:
+  target_spacing: [1.0, 1.0, 1.0]   # mm — overridden by nnUNet auto-planning
+  normalization: ct                   # CT-specific normalization (clip + z-score)
