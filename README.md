@@ -1,1 +1,2 @@
 # MAE-UNETR-for-simulated-revision-surgery
+FemoralRecon – An automatic deep learning-based pipeline for reconstructing full femoral geometry from corrupted or incomplete CT scans, designed to support pre-operative planning in revision total knee arthroplasty (rTKA). This repository provides the full source code, pre-trained models, and documentation accompanying the publication in the British Journal of Radiology.
